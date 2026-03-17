@@ -4,8 +4,9 @@ navToggle.addEventListener("click", () => {
   document.body.classList.toggle("sidebar-closed");
 
  
- 
+
 });
+
 
 // ==============================
 // ACTIVE NAV ITEM
@@ -65,6 +66,14 @@ window.addEventListener('load', function () {
   const lastName = localStorage.getItem('lastName');
   const email = localStorage.getItem('email');
   const bio = localStorage.getItem('bio');
+  const profileImage = localStorage.getItem('profileImage');
+
+  if (profileImage) {
+    const avatar = document.querySelector('.profile-avatar');
+    avatar.style.backgroundImage = `url(${profileImage})`;
+    avatar.style.backgroundSize = 'cover';
+    avatar.textContent = '';
+  }
 
   if (firstName) {
     // Update inputs
@@ -79,9 +88,9 @@ window.addEventListener('load', function () {
 });
 
 
-// ==============================
+
 // HELPER — updates profile card
-// ==============================
+
 function updateProfileCard(firstName, lastName, bio) {
   const fullName = firstName + ' ' + lastName;
   const initials = firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
@@ -96,6 +105,32 @@ function updateProfileCard(firstName, lastName, bio) {
   }
 }
 
+
+
+// EDIT AVATAR
+const editAvatarBtn = document.querySelector('.btn-outline');
+
+editAvatarBtn.addEventListener('click', function () {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+
+  input.addEventListener('change', function () {
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const avatar = document.querySelector('.profile-avatar');
+        avatar.style.backgroundImage = `url(${e.target.result})`;
+        avatar.style.backgroundSize = 'cover';
+        avatar.textContent = '';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  input.click();
+});
 
 // ==============================
 // NOTIFICATION CHECKBOXES

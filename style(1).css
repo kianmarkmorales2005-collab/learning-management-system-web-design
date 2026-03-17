@@ -8,7 +8,7 @@
     --accent2: #ff6b6b;
     --accent3: #43e8a4;
     --text: #0e0f14;
-    --muted: #0e0f14;
+    --muted: #000000;
     --radius: 14px;
   }
 
@@ -453,6 +453,7 @@ body::before {
   body.sidebar-closed .sidebar {
     width: 70px;
     padding: 28px 10px;
+   
   }
 
   body.sidebar-closed .main {
@@ -460,9 +461,8 @@ body::before {
   }
 
   body.sidebar-closed .logo {
-    font-size: 0; 
-    justify-content: center;
-    padding: 0;
+   
+    display: none;
   }
 
   body.sidebar-closed .nav-item {
@@ -479,3 +479,19 @@ body::before {
   body.sidebar-closed .user-card {
     display: none; 
   }
+
+  .sidebar-logo-bottom {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center; /* centers the logo */
+  padding: 10px 0;
+  border-radius: 20px;
+  border-top: 2px solid rgba(255,255,255,0.15); /* subtle divider line */
+}
+
+.bottom-logo {
+  width: 100%; 
+  max-width: 160px;  /* adjust size as needed */
+  height: auto;
+  opacity: 1.0;  /* slightly faded to look natural */
+}
