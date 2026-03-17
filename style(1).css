@@ -173,7 +173,7 @@ body::before {
   .stats-grid{
 
      display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 16px;
   margin-bottom: 28px;
 }
@@ -483,15 +483,15 @@ body::before {
   .sidebar-logo-bottom {
   margin-top: 16px;
   display: flex;
-  justify-content: center; /* centers the logo */
+  justify-content: center;
   padding: 10px 0;
   border-radius: 20px;
-  border-top: 2px solid rgba(255,255,255,0.15); /* subtle divider line */
+  border-top: 2px solid rgba(255,255,255,0.15); 
 }
 
 .bottom-logo {
   width: 100%; 
-  max-width: 160px;  /* adjust size as needed */
+  max-width: 160px;  
   height: auto;
-  opacity: 1.0;  /* slightly faded to look natural */
+  opacity: 1.0;  
 }
